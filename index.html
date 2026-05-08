@@ -1,318 +1,287 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>BUZZ GALLERY TOKYO｜Superformance MKIII Japan</title>
-  <meta name="description" content="BUZZ GALLERY TOKYOが仕立てるSuperformance MKIII Japan。ライセンスドモデル、日本専用仕様、エンジンラインナップ、標準装備、オプション、保証を統合した試作ページ。">
-  <link rel="preconnect" href="https://www.buzz-factory.net">
-  <style>
-    :root{
-      --black:#070707;
-      --ink:#171717;
-      --muted:#6f675f;
-      --cream:#f4efe6;
-      --paper:#fbf7ef;
-      --gold:#b48a47;
-      --red:#771717;
-      --blue:#0d2b55;
-      --line:rgba(0,0,0,.12);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: "Hiragino Mincho ProN","Yu Mincho","YuMincho","Times New Roman",serif;
-      color:var(--ink);
-      background:var(--paper);
-      line-height:1.75;
-    }
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .topbar{
-      position:sticky;top:0;z-index:10;
-      background:rgba(5,5,5,.93);
-      color:#fff;
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.12);
-    }
-    .nav{
-      max-width:1180px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:16px 20px;
-      gap:24px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;letter-spacing:.08em;
-      font-weight:600;
-    }
-    .mark{
-      width:42px;height:42px;border:1px solid rgba(255,255,255,.75);
-      border-radius:50%;display:grid;place-items:center;font-size:24px;font-style:italic;
-    }
-    .brand small{display:block;font-size:10px;letter-spacing:.22em;color:#cfc7ba;margin-top:-4px}
-    .links{display:flex;gap:24px;align-items:center;font-size:12px;letter-spacing:.08em}
-    .links span{display:block;font-size:9px;color:#bdb4aa;text-align:center;margin-top:2px}
-    .hero{
-      min-height:72vh;
-      color:#fff;
-      background:
-        linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.44)),
-        url("https://www.buzz-factory.net/tokyo/images/standard2.jpg") center/cover no-repeat,
-        radial-gradient(circle at 30% 30%,#333,#050505);
-      display:grid;place-items:center;text-align:center;padding:90px 20px;
-    }
-    .hero-inner{max-width:900px}
-    .eyebrow{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#e2d6c5}
-    h1{
-      margin:18px 0 20px;
-      font-size:clamp(36px,6vw,76px);
-      line-height:1.18;
-      letter-spacing:.08em;
-      text-shadow:0 2px 16px rgba(0,0,0,.7);
-    }
-    .hero p{font-size:clamp(15px,2vw,22px);letter-spacing:.06em;margin:0 auto 28px;max-width:740px}
-    .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{
-      display:inline-block;border:1px solid currentColor;padding:11px 22px;
-      font-size:13px;letter-spacing:.12em;background:rgba(255,255,255,.08)
-    }
-    .btn.primary{background:#fff;color:#111;border-color:#fff}
-    section{padding:70px 20px}
-    .wrap{max-width:1180px;margin:0 auto}
-    .center{text-align:center}
-    .section-title{font-size:clamp(28px,4vw,46px);line-height:1.25;margin:0 0 12px;letter-spacing:.06em}
-    .lead{font-size:17px;color:var(--muted);max-width:780px;margin:0 auto 34px}
-    .grid{display:grid;gap:18px}
-    .lineup{grid-template-columns:repeat(3,1fr)}
-    .card{
-      background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.06);
-      overflow:hidden;
-    }
-    .card-head{padding:15px 18px;color:#fff;letter-spacing:.08em;text-align:center}
-    .heritage .card-head{background:#8a4d12}
-    .modern .card-head{background:#0d2b55}
-    .halo .card-head{background:#7d1717}
-    .card .image{
-      height:230px;background:#ddd center/cover no-repeat;
-    }
-    .heritage .image{background-image:url("https://www.buzz-factory.net/tokyo/img/engine2.PNG")}
-    .modern .image{background-image:url("https://www.buzz-factory.net/tokyo/img/engine3.PNG")}
-    .halo .image{background-image:url("https://www.buzz-factory.net/tokyo/img/engine1.PNG")}
-    .card-body{padding:22px}
-    .card h3{font-size:24px;line-height:1.2;margin:0 0 8px}
-    .price{font-size:21px;margin-top:14px;letter-spacing:.05em}
-    .note{font-size:12px;color:var(--muted)}
-    .black{
-      background:#080808;color:#fff;
-    }
-    .black .lead{color:#c8c0b7}
-    .features{grid-template-columns:repeat(4,1fr)}
-    .feature{
-      padding:24px;background:linear-gradient(180deg,#151515,#090909);
-      border:1px solid rgba(255,255,255,.12);min-height:210px;
-    }
-    .feature b{display:block;color:#e5d3b4;font-size:18px;margin-bottom:8px}
-    .feature p{color:#d6d0c8;font-size:14px;margin:0}
-    .split{grid-template-columns:1.1fr .9fr;align-items:center;gap:42px}
-    .photo{
-      min-height:360px;background:#222 center/cover no-repeat;border:1px solid rgba(0,0,0,.1);
-      box-shadow:0 18px 45px rgba(0,0,0,.16);
-    }
-    .licensed{background-image:url("https://www.buzz-factory.net/tokyo/images/standard1.jpg")}
-    .japan{background-image:url("https://www.buzz-factory.net/tokyo/images/standard2.jpg")}
-    .equipment{background-image:url("https://www.buzz-factory.net/tokyo/images/standard3.jpg")}
-    .option{background-image:url("https://www.buzz-factory.net/tokyo/images/tremec2.jpg")}
-    .text h2{font-size:38px;line-height:1.3;margin:0 0 14px}
-    .text p{color:#4e463f}
-    .pill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-    .pill{border:1px solid var(--line);padding:7px 11px;border-radius:999px;background:#fff;font-size:13px}
-    .specs{grid-template-columns:repeat(3,1fr)}
-    .spec{
-      padding:26px;background:#fff;border-top:4px solid var(--gold);box-shadow:0 10px 24px rgba(0,0,0,.05)
-    }
-    .spec span{font-size:12px;color:var(--muted);letter-spacing:.14em}
-    .spec strong{display:block;font-size:24px;margin:6px 0}
-    .options{grid-template-columns:repeat(3,1fr)}
-    .opt{
-      background:#fff;border:1px solid var(--line);padding:22px;min-height:230px
-    }
-    .opt h3{margin:0 0 10px;font-size:22px}
-    .opt ul{margin:0;padding-left:1.2em;color:#4d453d}
-    .warranty{
-      background:linear-gradient(135deg,#151515,#3a2a17);
-      color:#fff;text-align:center;
-    }
-    .warranty .lead{color:#e5dccf}
-    footer{
-      background:#050505;color:#fff;padding:34px 20px;text-align:center;font-size:13px;color:#c8c0b7
-    }
-    @media (max-width:900px){
-      .links{display:none}
-      .nav{padding:12px 16px}
-      .brand strong{font-size:14px}
-      .hero{min-height:78vh;padding:70px 18px;background-position:center}
-      section{padding:52px 16px}
-      .lineup,.features,.specs,.options,.split{grid-template-columns:1fr}
-      .card .image{height:190px}
-      .photo{min-height:260px}
-      .text h2{font-size:30px}
-      .feature{min-height:auto}
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="nav">
-      <a class="brand" href="#">
-        <span class="mark">B</span>
-        <span><strong>BUZZ GALLERY TOKYO</strong><small>SUPERFORMANCE MKIII JAPAN</small></span>
-      </a>
-      <nav class="links">
-        <a href="#licensed">LICENSED<span>公認モデル</span></a>
-        <a href="#lineup">LINEUP<span>ラインナップ</span></a>
-        <a href="#japan">JAPAN SPEC<span>日本専用仕様</span></a>
-        <a href="#equipment">EQUIPMENT<span>標準装備</span></a>
-        <a href="#options">OPTIONS<span>オプション</span></a>
-        <a href="#contact">CONTACT<span>お問い合わせ</span></a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="eyebrow">Modern American Continuation Cars</div>
-        <h1>過去の名車を、<br>日本品質で現代へ。</h1>
-        <p>アメリカの魂、シェルビーのヘリテージ、そして日本のクラフトマンシップ。Buzz Gallery Tokyoが仕立てる Superformance MKIII。</p>
-        <div class="btns">
-          <a class="btn primary" href="#lineup">ラインナップを見る</a>
-          <a class="btn" href="#japan">日本専用仕様</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="licensed">
-      <div class="wrap split grid">
-        <div class="text">
-          <div class="eyebrow" style="color:var(--gold)">Carroll Shelby Licensed Model</div>
-          <h2>公認のヘリテージを、<br>現代の完成度で。</h2>
-          <p>Superformance MKIIIは、キャロル・シェルビー ライセンシング社に認可されたシェルビーコブラのライセンスドモデル。単なるスタイルの再現ではなく、オリジナリティと現代の安全性・信頼性を両立させた一台です。</p>
-          <p>Buzz Gallery Tokyoでは、日本国内の道路環境と登録基準に合わせ、細部まで仕立て直した日本専用仕様としてお届けします。</p>
-        </div>
-        <div class="photo licensed"></div>
-      </div>
-    </section>
-
-    <section id="lineup" class="center">
-      <div class="wrap">
-        <h2 class="section-title">3つのラインで選ぶ、Superformance MKIII。</h2>
-        <p class="lead">CSX10000は別ページで独立展開し、このページでは日本向けSuperformance MKIIIのエンジンラインナップに集中します。</p>
-        <div class="grid lineup">
-          <article class="card heritage">
-            <div class="card-head">HERITAGE</div>
-            <div class="image"></div>
-            <div class="card-body">
-              <h3>302 OHV / 427 OHV</h3>
-              <p>クラシックなFord OHVの魅力を味わうライン。427はBig Block表現ではなく、351 Clevelandベースの高排気量ストローカーとして正しく語ります。</p>
-              <div class="price">¥18,500,000〜</div>
-            </div>
-          </article>
-          <article class="card modern">
-            <div class="card-head">MODERN PERFORMANCE</div>
-            <div class="image"></div>
-            <div class="card-body">
-              <h3>302 Coyote DOHC</h3>
-              <p>現代の信頼性と快適性を兼ね備えた主力モデル。EFI、扱いやすさ、日常走行性能を重視する方へ。</p>
-              <div class="price">¥19,800,000〜</div>
-            </div>
-          </article>
-          <article class="card halo">
-            <div class="card-head">HALO</div>
-            <div class="image"></div>
-            <div class="card-body">
-              <h3>450 Godzilla</h3>
-              <p>7.3L OHVの圧倒的トルクと存在感。次世代のOHV Cobraとして、音・加速・迫力を楽しむモデル。</p>
-              <div class="price">¥22,000,000〜</div>
-            </div>
-          </article>
-        </div>
-        <p class="note" style="margin-top:18px">※価格は為替・関税・仕様により予告なく変更となる場合があります。</p>
-      </div>
-    </section>
-
-    <section id="japan" class="black">
-      <div class="wrap">
-        <div class="center">
-          <h2 class="section-title">日本専用仕様という、Buzzの価値。</h2>
-          <p class="lead">ただ輸入するのではなく、日本で安心して乗れる一台へ。安全基準、使い勝手、冷却、警告灯、細部の仕上げまで国内で磨き込みます。</p>
-        </div>
-        <div class="grid features">
-          <div class="feature"><b>R14 / R17 強度試験</b><p>シートベルトアンカレッジ、シートアンカレッジの強度試験を実施し、日本の安全基準に適合。</p></div>
-          <div class="feature"><b>日本専用ナンバー灯</b><p>ライセンスプレートとトランクオープナーが干渉しない専用設計で、実用性を高めます。</p></div>
-          <div class="feature"><b>電子制御ツイン電動ファン</b><p>日本の道路環境に合わせた専用動作設定で、冷却性能と信頼性を向上。</p></div>
-          <div class="feature"><b>各種警告灯</b><p>残燃料、ブレーキ、水温など、日本仕様として必要な表示と安心感を追加。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap split grid">
-        <div class="photo japan"></div>
-        <div class="text">
-          <div class="eyebrow" style="color:var(--gold)">Heritage Meets Engineering</div>
-          <h2>オリジナルの空気感と、<br>現代の信頼性。</h2>
-          <p>スミス、ルーカス、テックスなど60年代と同一のヘリテージパーツを使いながら、フレーム・ブレーキ・冷却・安全装備は現代基準へ。見た目だけでなく、乗れる品質まで仕上げます。</p>
-          <div class="pill-list">
-            <span class="pill">TIGラダーフレーム</span><span class="pill">Wilwoodブレーキ</span><span class="pill">Smiths / Lucas</span><span class="pill">FRPボディ加工</span><span class="pill">日本品質仕上げ</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="equipment" class="center">
-      <div class="wrap">
-        <h2 class="section-title">標準装備品</h2>
-        <p class="lead">クラシックな佇まいを守りながら、日本での使用に必要な装備を整えています。</p>
-        <div class="grid specs">
-          <div class="spec"><span>WHEEL</span><strong>15” Halibrand Style</strong><p>ノックオフ式脱落防止ワイヤー付。</p></div>
-          <div class="spec"><span>STEERING</span><strong>Moto-Lita Wood</strong><p>3スポークウッドステアリング。</p></div>
-          <div class="spec"><span>SAFETY</span><strong>ELR 3点式シートベルト</strong><p>R14認定品、日本仕様に適合。</p></div>
-          <div class="spec"><span>INTERIOR</span><strong>Black Leather Seats</strong><p>JIS D4607規格ヘッドレスト、運転席スライド機能付き。</p></div>
-          <div class="spec"><span>BRAKE</span><strong>Wilwood 4-Pot</strong><p>F12”(304mm) / R11”(280mm)。</p></div>
-          <div class="spec"><span>JAPAN SPEC</span><strong>Warning Lamps</strong><p>残燃料・ブレーキ・水温などの警告灯。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="options">
-      <div class="wrap">
-        <div class="center">
-          <h2 class="section-title">Personalized Specification</h2>
-          <p class="lead">オーナーの好みに合わせて仕立てる自由度。クラシックスタイルからモダンな快適仕様まで、最適な一台を提案します。</p>
-        </div>
-        <div class="grid options">
-          <div class="opt"><h3>TREMEC 5 Speed</h3><ul><li>高速走行時の静粛性を向上</li><li>100km/h走行時の回転数を抑制</li><li>日本では実質マストアイテム</li></ul></div>
-          <div class="opt"><h3>Paint Stripe</h3><ul><li>ホワイト / シルバー / ブラックなど</li><li>Cobraらしい外観を決定づける仕様</li><li>ピンストライプ追加も可能</li></ul></div>
-          <div class="opt"><h3>Le Mans Top</h3><ul><li>歴史的背景を持つハードトップ</li><li>施錠機能付きリアハッチ</li><li>装着したままトランク開閉可能</li></ul></div>
-          <div class="opt"><h3>Soft Top / Tonneau</h3><ul><li>天候変化に対応</li><li>トランク収納可能</li><li>日常保管にも便利</li></ul></div>
-          <div class="opt"><h3>LED / Gauge</h3><ul><li>LEDヘッドライト</li><li>Smiths電気式メーター</li><li>安全性と視認性を向上</li></ul></div>
-          <div class="opt"><h3>Interior / Sound</h3><ul><li>カラーレザー</li><li>ダイヤモンドステッチ</li><li>リアトレイサウンド</li></ul></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="warranty" id="contact">
-      <div class="wrap">
-        <h2 class="section-title">3年間走行距離無制限保証</h2>
-        <p class="lead">デリケートなスポーツカーを安心して維持していただくために、新車保証と有償メンテナンスパッケージを設定。納車後もBuzz Gallery Tokyoがサポートします。</p>
-        <div class="btns"><a class="btn primary" href="mailto:info@buzz-factory.net">お問い合わせ</a></div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    BUZZ GALLERY TOKYO｜埼玉県川越市広栄町12-13｜049-265-8683
-  </footer>
-</body>
-</html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BUZZ GALLERY TOKYO｜Superformance MKIII Japan</title>
+<style>
+:root{--ink:#171717;--paper:#fbf7ef;--gold:#b48a47;--line:rgba(0,0,0,.12)}*{box-sizing:border-box}body{margin:0;font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Times New Roman",serif;color:var(--ink);background:var(--paper);line-height:1.75}a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.94);color:white;backdrop-filter:blur(8px)}.nav{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:16px 20px}.brand{display:flex;gap:12px;align-items:center;letter-spacing:.08em}.mark{width:42px;height:42px;border:1px solid white;border-radius:50%;display:grid;place-items:center;font-style:italic;font-size:24px}.brand small{display:block;font-size:10px;letter-spacing:.22em;color:#cfc7ba}.links{display:flex;gap:18px;font-size:12px}.links span{display:block;font-size:9px;color:#bdb4aa;text-align:center}
+.hero{min-height:76vh;color:white;text-align:center;display:grid;place-items:center;padding:90px 20px;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.5)),url("https://www.buzz-factory.net/tokyo/images/standard2.jpg") center/cover no-repeat}h1{font-size:clamp(36px,6vw,76px);line-height:1.18;letter-spacing:.08em}.hero p{font-size:clamp(15px,2vw,22px);max-width:760px;margin:auto auto 28px}.btn{display:inline-block;border:1px solid currentColor;padding:11px 22px;margin:5px;background:rgba(255,255,255,.08)}.primary{background:white;color:#111}
+section{padding:70px 20px}.wrap{max-width:1180px;margin:auto}.center{text-align:center}.section-title{font-size:clamp(28px,4vw,46px);line-height:1.25;margin:0 0 12px}.lead{font-size:17px;color:#6f675f;max-width:820px;margin:0 auto 34px}
+.grid{display:grid;gap:18px}.lineup{grid-template-columns:repeat(3,1fr)}.card{background:white;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.06);overflow:hidden}.card-head{padding:15px;color:white;text-align:center}.heritage .card-head{background:#8a4d12}.modern .card-head{background:#0d2b55}.halo .card-head{background:#7d1717}.image{height:230px;background:center/cover no-repeat}.heritage .image{background-image:url("https://www.buzz-factory.net/tokyo/images/engine2.PNG")}.modern .image{background-image:url("https://www.buzz-factory.net/tokyo/images/engine3.PNG")}.halo .image{background-image:url("https://www.buzz-factory.net/tokyo/images/engine1.PNG")}.card-body{padding:22px}.card h3{font-size:24px;margin:0 0 8px}.price{font-size:20px;color:#6c4b1d;margin-top:14px}
+.black{background:#080808;color:white}.features{grid-template-columns:repeat(4,1fr)}.feature{background:#111;padding:24px;border:1px solid rgba(255,255,255,.12)}.feature b{color:#e5d3b4;font-size:18px}
+.specs{grid-template-columns:repeat(3,1fr)}.spec{background:white;padding:26px;border-top:4px solid var(--gold);box-shadow:0 10px 24px rgba(0,0,0,.05)}.spec span{font-size:12px;color:#6f675f;letter-spacing:.14em}.spec strong{display:block;font-size:24px;margin:6px 0}
+.filterbar{position:sticky;top:74px;background:rgba(251,247,239,.94);backdrop-filter:blur(8px);border:1px solid var(--line);padding:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 auto 28px}.filterbar a{background:white;border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-size:13px}
+.option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.option-card{background:white;border:1px solid var(--line);box-shadow:0 10px 26px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}.option-photo{height:210px;background-size:cover;background-position:center}.option-content{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}.option-content span{align-self:flex-start;background:#111;color:white;border-radius:999px;padding:4px 9px;font-size:12px}.option-content h3{font-size:21px;line-height:1.25;margin:2px 0 0}.en{font-size:11px;color:var(--gold);letter-spacing:.13em;margin:0}.option-content p{margin:0;color:#514941;font-size:14px}.price-note{margin-top:auto;border-top:1px solid var(--line);padding-top:10px;color:#7a5b2c;font-size:13px}
+footer{background:#050505;color:#c8c0b7;text-align:center;padding:34px 20px}
+@media(max-width:900px){.links{display:none}section{padding:52px 16px}.lineup,.features,.specs,.option-grid{grid-template-columns:1fr}.hero{min-height:78vh}.filterbar{top:66px;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start}.filterbar a{white-space:nowrap}}
+</style></head><body>
+<header class="topbar"><div class="nav"><a class="brand"><span class="mark">B</span><span><strong>BUZZ GALLERY TOKYO</strong><small>SUPERFORMANCE MKIII JAPAN</small></span></a><nav class="links"><a href="#lineup">LINEUP<span>ラインナップ</span></a><a href="#japan">JAPAN SPEC<span>日本専用仕様</span></a><a href="#equipment">EQUIPMENT<span>標準装備</span></a><a href="#options">OPTIONS<span>写真入り</span></a></nav></div></header>
+<main>
+<section class="hero"><div><div style="letter-spacing:.22em">MODERN AMERICAN CONTINUATION CARS</div><h1>過去の名車を、<br>日本品質で現代へ。</h1><p>アメリカの魂、シェルビーのヘリテージ、そして日本のクラフトマンシップ。Buzz Gallery Tokyoが仕立てる Superformance MKIII。</p><a class="btn primary" href="#lineup">ラインナップを見る</a><a class="btn" href="#options">オプションを見る</a></div></section>
+<section id="lineup" class="center"><div class="wrap"><h2 class="section-title">3つのラインで選ぶ、Superformance MKIII。</h2><p class="lead">CSX10000は別ページで独立展開し、このページではSuperformance MKIIIの日本向けラインナップに集中します。</p><div class="grid lineup"><article class="card heritage"><div class="card-head">HERITAGE</div><div class="image"></div><div class="card-body"><h3>302 OHV / 427 OHV</h3><p>クラシックなFord OHVの魅力。427はBig Block表現ではなく、351 Clevelandベースの高排気量ストローカーとして正しく語ります。</p><div class="price">価格はお問い合わせください</div></div></article><article class="card modern"><div class="card-head">MODERN PERFORMANCE</div><div class="image"></div><div class="card-body"><h3>302 Coyote DOHC</h3><p>現代の信頼性と快適性を兼ね備えた主力モデル。</p><div class="price">価格はお問い合わせください</div></div></article><article class="card halo"><div class="card-head">HALO</div><div class="image"></div><div class="card-body"><h3>450 Godzilla</h3><p>7.3L OHVの圧倒的トルクと存在感。次世代のOHV Cobra。</p><div class="price">価格はお問い合わせください</div></div></article></div></div></section>
+<section id="japan" class="black"><div class="wrap center"><h2 class="section-title">日本専用仕様という、Buzzの価値。</h2><p class="lead">ただ輸入するのではなく、日本で安心して乗れる一台へ。安全基準、使い勝手、冷却、警告灯、細部の仕上げまで国内で磨き込みます。</p><div class="grid features"><div class="feature"><b>R14 / R17 強度試験</b><p>シートベルト・シートアンカーの強度試験。</p></div><div class="feature"><b>日本専用ナンバー灯</b><p>トランクオープナーと干渉しない専用設計。</p></div><div class="feature"><b>電子制御ツイン電動ファン</b><p>日本の道路環境に合わせた専用設定。</p></div><div class="feature"><b>各種警告灯</b><p>残燃料、ブレーキ、水温などを追加。</p></div></div></div></section>
+<section id="equipment" class="center"><div class="wrap"><h2 class="section-title">標準装備品</h2><div class="grid specs"><div class="spec"><span>WHEEL</span><strong>15” Halibrand Style</strong><p>ノックオフ式脱落防止ワイヤー付。</p></div><div class="spec"><span>STEERING</span><strong>Moto-Lita Wood</strong><p>3スポークウッドステアリング。</p></div><div class="spec"><span>SAFETY</span><strong>ELR 3点式シートベルト</strong><p>R14認定品。</p></div><div class="spec"><span>BRAKE</span><strong>Wilwood 4-Pot</strong><p>F12” / R11”。</p></div><div class="spec"><span>INTERIOR</span><strong>Black Leather Seats</strong><p>ヘッドレスト・運転席スライド付き。</p></div><div class="spec"><span>JAPAN SPEC</span><strong>Warning Lamps</strong><p>日本仕様の警告灯。</p></div></div></div></section>
+<section id="options"><div class="wrap"><div class="center"><h2 class="section-title">写真で選ぶ、Superformance MKIII Options</h2><p class="lead">価格は商談時に、為替・仕様・納期を確認したうえでご案内します。</p></div><div class="filterbar"><a>パワートレイン</a><a>エクステリア</a><a>インテリア</a><a>パフォーマンス</a><a>その他</a></div><div class="option-grid"><article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/tremec2.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パワートレイン</span><h3>トレメック5速</h3><p class="en">TREMEC 5 SPEED</p><p>高速巡航時の回転数を抑え、静粛性・燃費・巡航快適性を高めます。日本では実質マストアイテムです。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/automatic2.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パワートレイン</span><h3>オートマチックトランスミッション</h3><p class="en">AUTOMATIC 10SP TRANSMISSION</p><p>より気軽にコブラを運転したい方向け。コヨーテエンジン搭載車のみ選択可能です。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op3.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パワートレイン</span><h3>パワーステアリング</h3><p class="en">POWER STEERING</p><p>低速域や街乗りでの扱いやすさを高める快適装備。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op4.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ペイントツインストライプ</h3><p class="en">PAINT TWIN STRIPE</p><p>Cobraらしさを決定づける定番仕様。ボディカラーに合わせて選択できます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op5.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>追加ペイントピンストライプ</h3><p class="en">PAINT PIN STRIPE</p><p>ツインストライプに細いアクセントを加え、外観にさらに個性を与えます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/tonneaucover1.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>トノカバー</h3><p class="en">TONNEAU COVER</p><p>日常的な保管、外出先で車を離れる時、急な雨への備えとして便利。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/softtop4.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ソフトトップ</h3><p class="en">SOFT TOP</p><p>サイドウィンドウと骨組みで取り付け。旅先や天候変化に備える全天候オプションです。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/lemanstop4.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ルマントップ</h3><p class="en">LE MANS TOP</p><p>歴史的背景を持つハードトップ。雨天時の実用性、施錠機能、装着したままのトランク使用が魅力です。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/hardtop2.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ハードトップ</h3><p class="en">HARD TOP</p><p>空力とレーシングヒストリーを感じさせるクラシックなハードトップ。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op15.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>クイックリフト</h3><p class="en">QUICK LIFTS</p><p>当時のレースで車体を素早く持ち上げるための装備。歴史的雰囲気と美しいバランスを高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op17.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>バンパレット</h3><p class="en">BUMPERETTES</p><p>クラシックでスタイリッシュな印象を強める外装アイテムです。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op19.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>フルフープバンパー</h3><p class="en">FULL HOOP BUMPER</p><p>英国車由来のクラシカルでジェントルな雰囲気を演出します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op20.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>レイヨットタイプ・サイドミラー</h3><p class="en">RAYDYOT MIRROR</p><p>クラシックな雰囲気を演出するサイドミラー。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op22.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>デュアル・ロールバー</h3><p class="en">DUAL ROLLBAR</p><p>同乗者側にもロールバーを追加し、見た目の迫力と安全性を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op23.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>レース・ロールバー</h3><p class="en">RACE ROLLBAR</p><p>サーキット走行を重視する方に向けたロールバー仕様。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op24.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ラジエターグリル コブラエンブレム</h3><p class="en">RADIATOR GRILLE EMBLEM</p><p>ラジエタースクープ内にコブラエンブレムが浮遊するように見える演出。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op25.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>427サイドエンブレム</h3><p class="en">427 SIDE EMBLEM</p><p>427ci仕様の存在感を示すサイドエンブレム。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op26.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>コブラメダリオン</h3><p class="en">COBRA MEDALLION</p><p>フロント・リア用コブラメダリオン。外観のクラシック感を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op27.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ステアリングエンブレム</h3><p class="en">STEERING EMBLEM</p><p>ステアリングにもコブラエンブレムを追加します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op28.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>LEDヘッドライト</h3><p class="en">LED HEADLIGHT</p><p>夜間視認性を高めつつ、レトロ感を崩さない電球色タイプも選択できます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op29.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>チップガード・フィルム</h3><p class="en">TIP GUARD FILM</p><p>リアフェンダーを飛び石から守るオリジナル採寸の保護フィルム。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op31.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>プロテクションフィルム</h3><p class="en">PROTECTION FILM</p><p>左右ドア上部・リアデッキ部分などを紫外線や経年劣化から守ります。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op32.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>ヒートシールド</h3><p class="en">HEAT SHIELD</p><p>高温になるサイドマフラーから乗員を守る安全装備。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op33.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>サイドパイプ専用ブラックペイント</h3><p class="en">SIDE PIPE BLACK PAINT</p><p>耐熱専用塗料によるブラックペイント。外観を引き締めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op34.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>耐熱バンテージ</h3><p class="en">HEAT RESISTING BANDAGE</p><p>エキゾーストからの放熱を抑え、エンジンルーム内温度の上昇を低減。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op35.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>耐熱スリーブ</h3><p class="en">HEAT RESISTING SLEEVE</p><p>高温になるヘダースからプラグコードを守る耐熱カバー。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op36.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>エクステリア</span><h3>427バルブカバー</h3><p class="en">427 VALVE COVER</p><p>427 COBRAロゴ入りのクラシックなバルブカバー。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op37.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>カラーレザーパッケージ</h3><p class="en">COLOR LEATHER PACKAGE</p><p>シートとドアパネルを好みのカラーレザーに変更し、高級感と個性を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op38.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>ダイヤモンドキルティング</h3><p class="en">DIAMOND QUILTING</p><p>シートやドアパネルに立体感と高級感を与える人気仕上げ。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op39.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>ステッチ色変更</h3><p class="en">STITCH COLOR CHANGE</p><p>ボディカラーやストライプに合わせた雰囲気づくりが可能です。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op40.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>パイピング追加</h3><p class="en">PIPING</p><p>シート周りにアクセントを加え、クラシックかつ上質な印象に仕上げます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op41.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>センターコンソール張替</h3><p class="en">CENTER CONSOLE LEATHER</p><p>内装全体の統一感を高めるセンターコンソール仕上げ。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op42.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>レザーステアリング</h3><p class="en">LEATHER STEERING</p><p>握り心地と上質感を高めるレザーステアリング仕様。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op43.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>スミスクロック</h3><p class="en">SMITHS QUARTZ CLOCK</p><p>他のスミス製計器と同一デザインでメーターパネルを完成させます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op44.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>電気式スミスウォーターテンプメーター</h3><p class="en">ELECTRIC SMITHS WATER TEMP</p><p>クラシックな外観と現代的な信頼性を両立します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op45.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>電気式スミスオイルテンプメーター</h3><p class="en">ELECTRIC SMITHS OIL TEMP</p><p>油温管理の安心感を高める実用性の高いメーター。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op46.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>フロアマット</h3><p class="en">FLOOR MAT</p><p>エンブレム刺繍入りの専用フロアマット。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op47.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>オーダーメイドカーカバー</h3><p class="en">CUSTOM CAR COVER</p><p>ガレージ保管時の埃から車両を守る専用カバー。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op48.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>4点式シートベルト</h3><p class="en">4-POINT HARNESS</p><p>レーストラックでの使用を考えた本格ハーネス。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op49.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>シートベルトカバー</h3><p class="en">SEAT BELT COVER</p><p>装着感を高め、インテリアのアクセントにもなります。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op50.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>リアトレイサウンド</h3><p class="en">REAR TRAY SOUND</p><p>Bluetooth対応アンプで音場を改善します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op51.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>センターコンソールボックス</h3><p class="en">CENTER CONSOLE BOX</p><p>小物収納を追加し、日常使用の利便性を向上。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op52.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>携帯ホルダー</h3><p class="en">PHONE HOLDER</p><p>スマートフォンを自然に固定できる実用装備。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op53.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>ツインカップホルダー</h3><p class="en">TWIN CUP HOLDER</p><p>日常ドライブや長距離移動時の使い勝手を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op54.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>助手席スライドシート</h3><p class="en">PASSENGER SLIDE SEAT</p><p>助手席の快適性と調整幅を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op55.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>ドライブレコーダー＆レーダー</h3><p class="en">DRIVE RECORDER &amp; RADAR</p><p>ドライブ中の安心感を高める装備。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op56.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>リアカメラ</h3><p class="en">REAR CAMERA</p><p>後方確認を補助し、駐車時の安心感を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op57.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>ETC2.0</h3><p class="en">ETC2.0</p><p>鍵付きグローブボックス内に設置し、アンテナは目立たないよう配慮。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op58.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>インテリア</span><h3>スペアキー</h3><p class="en">SPARE KEY</p><p>各部用の追加キーセット。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/wheel.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>18インチホイール</h3><p class="en">18 INCH WHEELS</p><p>迫力のアピアランスと走行安定性を高めます。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op60.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>BFグッドリッチ</h3><p class="en">BF GOODRICH</p><p>ホワイトレター仕様。クラシックな雰囲気を演出します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op61.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>コヨーテパフォーマンスパッケージ</h3><p class="en">COYOTE PERFORMANCE PACKAGE</p><p>吸気効果と耐久性を改善し、最新エンジンにレトロな雰囲気も演出。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op62.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>コヨーテ エアインダクションシステム</h3><p class="en">COYOTE AIR INDUCTION SYSTEM</p><p>吸気流量を最適化し、高回転域の伸びを改善。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op63.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>6ポッドブレーキ</h3><p class="en">WILWOOD 6POT BRAKE</p><p>制動力とペダルレスポンス、コントロール性を向上。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op64.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>ターキーパン・エアクリーナー</h3><p class="en">TURKEY PAN AIR CLEANER</p><p>歴史的視覚要素を持つOHV向けスタイル。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/top34.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>アラゴスタサスペンション</h3><p class="en">ARAGOSTA SUSPENSION</p><p>20段階減衰調整により、快適性とスポーツ性を両立。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op66.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>フロントヘルパースプリング</h3><p class="en">FRONT HELPER SPRING</p><p>フロント車高を低くする場合に有効なアイテム。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op67.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>パフォーマンス</span><h3>メーカー基準値外指定ホイールアライメント</h3><p class="en">CUSTOM ALIGNMENT</p><p>走行特性や好みに合わせて調整します。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op68.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>シーテック</h3><p class="en">CTEK</p><p>バッテリーコンディションを維持するためのメンテナンスアイテム。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op69.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>リジッドグリムコートG</h3><p class="en">RIGID GLIM COAT G</p><p>純正塗料との相性にこだわったガラスコーティング。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op70.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>リジッドグリムコートS</h3><p class="en">RIGID GLIM COAT S</p><p>高硬度セラミックコーティング。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op71.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>リジッドグリムコートW</h3><p class="en">RIGID GLIM COAT W</p><p>ウインドスクリーンの撥水・視界確保を補助。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op72.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>リジッドグリムコートR</h3><p class="en">RIGID GLIM COAT R</p><p>ホイールのブレーキダスト汚れを軽減。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op73.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>専用メインテナンス剤</h3><p class="en">MAINTENANCE AGENT</p><p>コーティング専用の保護剤。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op74.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>オリジナルタッチアップペイント</h3><p class="en">TOUCH UP PAINT</p><p>現車色に合わせて日本で作成する補修用ペイント。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article>
+<article class="option-card">
+<div class="option-photo" style="background-image:linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.28)),url('https://www.buzz-factory.net/tokyo/images/op75.jpg'),url('https://www.buzz-factory.net/tokyo/images/standard2.jpg')"></div>
+<div class="option-content"><span>その他</span><h3>ステッカー・ペイバック</h3><p class="en">STICKER PAYBACK</p><p>継続掲出条件付きのステッカー企画。詳細はスタッフまで。</p><div class="price-note">価格は商談時にご案内いたします</div></div>
+</article></div></div></section>
+</main><footer>BUZZ GALLERY TOKYO｜埼玉県川越市広栄町12-13｜049-265-8683</footer>
+</body></html>
