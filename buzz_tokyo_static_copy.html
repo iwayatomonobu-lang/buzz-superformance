@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUZZ GALLERY TOKYO | SUPERFORMANCE MKIII JAPAN</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic","Helvetica Neue",Arial,sans-serif;background:#f4efe6;color:#171717;line-height:1.8}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.header{position:sticky;top:0;z-index:20;background:rgba(15,15,15,.94);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 22px;gap:20px}
+.brand{display:flex;align-items:center;gap:14px;letter-spacing:.08em}
+.logo{width:44px;height:44px;border:1px solid #fff;border-radius:50%;display:grid;place-items:center;font-family:serif;font-style:italic;font-size:24px}
+.brand strong{display:block;font-size:18px}
+.brand span{display:block;font-size:10px;letter-spacing:.24em;color:#cfc7bb}
+.menu{display:flex;gap:16px;font-size:12px;letter-spacing:.1em;flex-wrap:wrap;justify-content:flex-end}
+.hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.58)),url('https://www.buzz-factory.net/tokyo/img/standard2.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:24px}
+.hero-inner{max-width:980px}
+.hero-sub{letter-spacing:.28em;font-size:15px;margin-bottom:36px}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,7vw,88px);font-weight:400;line-height:1.05;letter-spacing:.04em;margin-bottom:34px}
+.hero-copy{font-size:clamp(19px,2.4vw,27px);letter-spacing:.08em;margin-bottom:20px}
+.hero-ja{font-size:clamp(16px,2vw,21px);margin-bottom:38px}
+.btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{border:1px solid currentColor;padding:13px 30px;letter-spacing:.14em;font-size:14px;background:rgba(255,255,255,.08)}
+.btn.light{background:#fff;color:#111}
+section{padding:92px 7%}
+.dark{background:#111;color:#f5f5f5}
+.white{background:#f4efe6;color:#171717}
+.section-title{text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,4vw,48px);font-weight:400;letter-spacing:.07em;margin-bottom:18px}
+.lead{max-width:960px;margin:0 auto 56px;text-align:center;color:inherit;opacity:.86}
+.grid{display:grid;gap:28px}
+.three{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.four{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:white;color:#171717;border-radius:12px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.08)}
+.dark .card{background:#1d1d1d;color:#f5f5f5;border:1px solid rgba(255,255,255,.1)}
+.card-head{background:#242424;color:#d4b98d;text-align:center;padding:14px;letter-spacing:.16em;font-size:13px}
+.card img.engine{height:255px;width:100%;object-fit:contain;background:#ece8df;padding:16px}
+.card img.photo{height:220px;width:100%;object-fit:cover}
+.card-body{padding:24px}
+.card h3{font-size:26px;font-weight:500;margin-bottom:12px}
+.price{font-size:28px;color:#b58a4a;margin-top:14px}
+.feature{background:#fff;border-radius:12px;padding:26px;box-shadow:0 10px 26px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.08)}
+.feature h3{color:#8a6428;margin-bottom:10px}
+.dark .feature{background:#202020;color:#f5f5f5;border:1px solid rgba(255,255,255,.08)}
+.option-label{font-size:12px;letter-spacing:.14em;color:#b58a4a}
+.price-note{font-size:13px;color:#8a6428;margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.1)}
+.color-chip{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;text-align:center;padding:18px;letter-spacing:.08em}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;color:#171717}
+th,td{padding:14px;border-bottom:1px solid rgba(0,0,0,.08);text-align:left}
+th{color:#8a6428}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.gallery div{height:210px;background:center/cover no-repeat;border-radius:10px}
+details{background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,.08);padding:18px 22px;margin:12px 0}
+summary{font-weight:600;color:#8a6428;cursor:pointer}
+footer{background:#111;color:#ccc;text-align:center;padding:60px 20px;font-size:14px}
+@media(max-width:760px){.menu{display:none}section{padding:70px 6%}.hero h1{font-size:46px}.btn{width:100%;max-width:280px}.brand strong{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="nav"><a class="brand" href="#top"><div class="logo">B</div><div><strong>BUZZ GALLERY TOKYO</strong><span>SUPERFORMANCE MKIII JAPAN</span></div></a><nav class="menu"><a href="#licensed">LICENSED</a><a href="#standard">STANDARD</a><a href="#lineup">ENGINE</a><a href="#options">OPTION</a><a href="#support">MENU</a><a href="#access">ACCESS</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="hero-inner"><div class="hero-sub">The Spirit of Shelby Cobra.</div><h1>HERITAGE<br>MODERN PERFORMANCE<br>HALO</h1><div class="hero-copy">Three ways to continue a legend.</div><div class="hero-ja">伝統、性能、そして憧れ。<br>それぞれの形で受け継ぐ Cobra。</div><div class="btns"><a class="btn light" href="#lineup">ラインナップを見る</a><a class="btn" href="#options">オプションを見る</a></div></div></section>
+<section id="licensed" class="white"><h2 class="section-title">Carroll Shelby Licensed Originality</h2><p class="lead">スーパフォーマンスMKIIIは、キャロル・シェルビー ライセンシング社から認可された、シェルビーコブラのライセンスドモデルです。オリジナルへの敬意を保ちながら、現代の完成度と日本での実用性を兼ね備えた一台へ仕立てます。</p><div class="grid three"><div class="feature"><h3>Licensed Model</h3><p>「本物に限りなく近い、高度に製作されたもの」として認められたSuperformance MKIII。</p></div><div class="feature"><h3>Japan Program</h3><p>日本国内の最新安全基準に適合させ、現代の道路事情における利便性を向上。</p></div><div class="feature"><h3>Buzz Craftsmanship</h3><p>日本で安心して楽しめるよう、各部の品質・法規・実用性を整えます。</p></div></div></section>
+<section id="lineup" class="dark"><h2 class="section-title">Engine Lineup</h2><p class="lead">Shelby Cobraの精神を、HERITAGE / MODERN PERFORMANCE / HALO の3つの思想で受け継ぎます。車両価格は表示、オプション価格は商談時にご案内します。</p><div class="grid three"><article class="card"><div class="card-head">HERITAGE</div><img class="engine" src="https://www.buzz-factory.net/tokyo/img/engine2.PNG" alt="302 OHV / 427 OHV"><div class="card-body"><h3>302 OHV / 427 OHV</h3><p>クラシックなFord OHVの魅力を味わうHERITAGEライン。427は351 Clevelandベースの高排気量ストローカーとして、Shelby Cobra本来の世界観を重視した仕様です。</p><div class="price">¥18,500,000〜</div></div></article><article class="card"><div class="card-head">MODERN PERFORMANCE</div><img class="engine" src="https://www.buzz-factory.net/tokyo/img/engine3.PNG" alt="302 Coyote DOHC"><div class="card-body"><h3>302 Coyote DOHC</h3><p>5.0L Coyote DOHCを中心としたMODERN PERFORMANCEライン。現代的な信頼性、扱いやすさ、快適性を重視した主力モデルです。</p><div class="price">¥19,800,000〜</div></div></article><article class="card"><div class="card-head">HALO</div><img class="engine" src="https://www.buzz-factory.net/tokyo/img/engine1.PNG" alt="450 Godzilla"><div class="card-body"><h3>450 Godzilla</h3><p>7.3L OHV “Godzilla” を搭載したHALOライン。現代OHV最大級のトルクと迫力を味わう、次世代のHalo Cobraです。</p><div class="price">¥22,000,000〜</div></div></article></div></section>
+<section id="japan-spec" class="white"><h2 class="section-title">日本専用仕様という、Buzzの価値。</h2><p class="lead">フレームやシート部品を強化し、UNECE R14/R17試験を国内で実施。日本の最新安全基準をクリアし、電動ファンや各種警告灯など日常使用の信頼性も高めています。</p><div class="grid four"><div class="feature"><h3>UNECE R14 / R17</h3><p>シートベルトアンカー、シートアンカーの強度試験を国内で実施。</p></div><div class="feature"><h3>JIS D4607 Headrest</h3><p>黒本革シートに高さ調整ヘッドレストと運転席スライド機能。</p></div><div class="feature"><h3>Wheel Lock Spinner</h3><p>ハンマーノックオフ式スピナーを装着した状態で保安基準に対応。</p></div><div class="feature"><h3>電子制御ツイン電動ファン</h3><p>日本仕様専用動作設定により冷却性能と実用性を向上。</p></div></div></section>
+<section id="standard" class="dark"><h2 class="section-title">Standard Equipment</h2><p class="lead">オリジナリティを損なうことなく、現代技術も投入。60年代のヘリテージパーツを使用しながら、ブレーキやフレームを強化しています。</p><div class="grid three"><div class="feature"><h3>15” Halibrand Style</h3><p>ノックオフ式脱落防止ワイヤー付アルミホイール。</p></div><div class="feature"><h3>Moto-Lita Wood Steering</h3><p>モト・リタ社製 3スポークウッドステアリング。</p></div><div class="feature"><h3>Black Leather Seats</h3><p>JIS D4607規格高さ調整ヘッドレスト、運転席スライド機能付き。</p></div><div class="feature"><h3>ELR付き3点収納シートベルト</h3><p>国際安全基準 R14シートベルトアンカー認定品。</p></div><div class="feature"><h3>Wilwood 4-Pot</h3><p>F12&quot;(304mm) / R11&quot;(280mm) キャリパー＆ローター。</p></div><div class="feature"><h3>Warning Lamps</h3><p>残燃料、ブレーキ、水温など日本仕様の警告灯。</p></div></div></section>
+<section id="options" class="white"><h2 class="section-title">Options</h2><p class="lead">オーナー様の個性に合わせた追加装備やアクセサリーを取り揃えています。オプション価格は商談時にご案内します。</p><div class="grid three"><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/tremec2.jpg"><div class="card-body"><span class="option-label">POWERTRAIN</span><h3>Tremec 5 Speed</h3><p>高速走行時の負担を軽減し、燃費と静粛性を高めます。</p><div class="price-note">価格は商談時にご案内します</div></div></article><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/op4.jpg"><div class="card-body"><span class="option-label">EXTERIOR</span><h3>Paint Twin Stripe</h3><p>Cobraらしさを決定づける定番仕様。</p><div class="price-note">価格は商談時にご案内します</div></div></article><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/lemanstop4.jpg"><div class="card-body"><span class="option-label">EXTERIOR</span><h3>Le Mans Top</h3><p>歴史的背景を持つ全天候型ハードトップ。</p><div class="price-note">価格は商談時にご案内します</div></div></article><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/op37.jpg"><div class="card-body"><span class="option-label">INTERIOR</span><h3>Color Leather Package</h3><p>シートとドアパネルをカラーレザーに変更。</p><div class="price-note">価格は商談時にご案内します</div></div></article><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/op63.jpg"><div class="card-body"><span class="option-label">PERFORMANCE</span><h3>6-Pot Brake Kit</h3><p>制動力とコントロール性を向上。</p><div class="price-note">価格は商談時にご案内します</div></div></article><article class="card"><img class="photo" src="https://www.buzz-factory.net/tokyo/img/top34.jpg"><div class="card-body"><span class="option-label">PERFORMANCE</span><h3>Aragosta Suspension</h3><p>20段階減衰調整式サスペンション。</p><div class="price-note">価格は商談時にご案内します</div></div></article></div></section>
+<section id="support" class="dark"><h2 class="section-title">Menu & Support</h2><p class="lead">購入前の仕様検討から、納車後のメンテナンス、将来の売却まで一貫してサポートします。</p><div class="grid four"><div class="feature"><h3>Color Variation</h3><p>カラーとストライプを検討できます。</p></div><div class="feature"><h3>Stock List</h3><p>在庫車両をSP番号単位で管理します。</p></div><div class="feature"><h3>Specifications</h3><p>主要諸元をご案内します。</p></div><div class="feature"><h3>Warranty & Maintenance</h3><p>新車保証と有償メンテナンスパッケージ。</p></div><div class="feature"><h3>Finance Plan</h3><p>ローンや法人プランも相談可能。</p></div><div class="feature"><h3>Buy Back & Sales Support</h3><p>売却・買い替えも支援します。</p></div><div class="feature"><h3>Parts Sales</h3><p>関連パーツもご案内します。</p></div><div class="feature"><h3>Showroom Reservation</h3><p>実車確認・商談は予約制です。</p></div></div></section>
+<section id="colors" class="white"><h2 class="section-title">Color Variation</h2><div class="grid four"><div class="color-chip">GURDSMAN BLUE</div><div class="color-chip">ROYAL BLUE</div><div class="color-chip">INDIGO BLUE</div><div class="color-chip">BLACK</div><div class="color-chip">PORTOFINO BLUE</div><div class="color-chip">VIPERSTEEL GRAY</div><div class="color-chip">WIMBLEDON WHITE</div><div class="color-chip">SILVER</div><div class="color-chip">TITANIUM</div><div class="color-chip">MONZA RED</div><div class="color-chip">YELLOW</div><div class="color-chip">MALACHITE GREEN</div></div></section>
+<section id="stock" class="dark"><h2 class="section-title">Stock List</h2><table><thead><tr><th>SP番号</th><th>カラー</th><th>ステータス</th></tr></thead><tbody><tr><td>SP03697</td><td>WIMBLEDON WHITE</td><td>RESERVED</td></tr><tr><td>SP03696</td><td>VIPER STEEL</td><td>AVAILABLE</td></tr><tr><td>SP03307</td><td>INDIGO BLUE</td><td>SOLD OUT</td></tr><tr><td>SP03843</td><td>ROYAL BLUE</td><td>SOLD OUT</td></tr></tbody></table></section>
+<section id="specs" class="white"><h2 class="section-title">Specifications</h2><div class="grid three"><div class="feature"><h3>全長</h3><p>3,870mm（クイックリフト長除く）</p></div><div class="feature"><h3>全高</h3><p>1,220mm</p></div><div class="feature"><h3>全幅</h3><p>1,780mm</p></div><div class="feature"><h3>ホイールベース</h3><p>2,290mm</p></div><div class="feature"><h3>燃料タンク</h3><p>64L</p></div><div class="feature"><h3>車両重量</h3><p>OHV427: 1,160kg / OHV302: 1,140kg / DOHC302: 1,210kg</p></div></div></section>
+<section id="gallery" class="dark"><h2 class="section-title">Photo Gallery</h2><div class="gallery"><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/standard1.jpg')"></div><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/standard2.jpg')"></div><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/standard3.jpg')"></div><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/op4.jpg')"></div><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/lemanstop4.jpg')"></div><div style="background-image:url('https://www.buzz-factory.net/tokyo/img/op37.jpg')"></div></div></section>
+<section id="faq" class="white"><h2 class="section-title">Q & A</h2><details><summary>納期はどのくらいですか？</summary><p>仕様・生産状況・為替・輸送状況により変動します。</p></details><details><summary>オプション価格はなぜ掲載していないのですか？</summary><p>仕様変更、為替、輸送費、工賃が変動するため商談時にご案内します。</p></details><details><summary>日本で普通に乗れますか？</summary><p>日本専用仕様として安全基準対応、警告灯、冷却、登録に関わる改善を行っています。</p></details></section>
+<section id="access" class="dark"><h2 class="section-title">Company & Access</h2><p class="lead">BUZZ GALLERY TOKYO<br>〒350-1117 埼玉県川越市広栄町12-13<br>PHONE 049-265-8683<br>OPEN 09:30 - CLOSE 18:30</p><p class="lead">BUZZ FACTORY<br>〒350-1121 埼玉県川越市脇田新町7-7<br>PHONE 049-238-8110</p></section>
+</main>
+<footer>BUZZ GALLERY TOKYO / SUPERFORMANCE JAPAN</footer>
+</body>
+</html>
