@@ -1,871 +1,235 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>BUZZ GALLERY TOKYO | SUPERFORMANCE MKIII JAPAN</title>
 
 <style>
-
-*{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-}
-
-body{
-
-font-family:
-
--apple-system,
-
-BlinkMacSystemFont,
-
-"Helvetica Neue",
-
-sans-serif;
-
-background:#111;
-
-color:#f5f5f5;
-
-line-height:1.7;
-
-}
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-.hero{
-
-height:100vh;
-
-background:
-
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-
-url('https://www.buzz-factory.net/tokyo/img/top1.jpg')
-
-center center/cover no-repeat;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-.hero-inner{
-
-max-width:1000px;
-
-}
-
-.hero-sub{
-
-letter-spacing:.28em;
-
-font-size:15px;
-
-margin-bottom:40px;
-
-opacity:.82;
-
-}
-
-.hero h1{
-
-font-size:82px;
-
-line-height:1.02;
-
-font-weight:300;
-
-letter-spacing:.03em;
-
-margin-bottom:40px;
-
-}
-
-.hero-copy{
-
-font-size:28px;
-
-letter-spacing:.08em;
-
-margin-bottom:30px;
-
-}
-
-.hero-ja{
-
-font-size:22px;
-
-opacity:.88;
-
-margin-bottom:45px;
-
-}
-
-.btns{
-
-display:flex;
-
-gap:20px;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-}
-
-.btn{
-
-padding:15px 34px;
-
-border:1px solid #ddd;
-
-font-size:14px;
-
-letter-spacing:.15em;
-
-transition:.3s;
-
-}
-
-.btn:hover{
-
-background:#fff;
-
-color:#111;
-
-}
-
-.section{
-
-padding:110px 8%;
-
-}
-
-.section-title{
-
-font-size:46px;
-
-text-align:center;
-
-margin-bottom:20px;
-
-font-weight:300;
-
-letter-spacing:.08em;
-
-}
-
-.lead{
-
-text-align:center;
-
-max-width:900px;
-
-margin:0 auto 70px;
-
-opacity:.82;
-
-}
-
-.lineup-grid{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(320px,1fr));
-
-gap:40px;
-
-}
-
-.card{
-
-background:#1a1a1a;
-
-border-radius:14px;
-
-overflow:hidden;
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.45);
-
-}
-
-.card-head{
-
-padding:16px;
-
-text-align:center;
-
-letter-spacing:.18em;
-
-font-size:13px;
-
-background:#232323;
-
-}
-
-.card img{
-
-width:100%;
-
-height:260px;
-
-object-fit:contain;
-
-background:#ece8df;
-
-padding:18px;
-
-display:block;
-
-}
-
-.card-body{
-
-padding:28px;
-
-}
-
-.card-body h3{
-
-font-size:34px;
-
-margin-bottom:18px;
-
-font-weight:300;
-
-}
-
-.price{
-
-margin-top:20px;
-
-font-size:32px;
-
-color:#d4b98d;
-
-}
-
-.options{
-
-background:#181818;
-
-}
-
-.option-grid{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(260px,1fr));
-
-gap:30px;
-
-}
-
-.option-card{
-
-background:#202020;
-
-border-radius:12px;
-
-overflow:hidden;
-
-}
-
-.option-card img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-}
-
-.option-card div{
-
-padding:20px;
-
-}
-
-.option-card h4{
-
-font-size:24px;
-
-margin-bottom:12px;
-
-font-weight:400;
-
-}
-
-footer{
-
-padding:80px 20px;
-
-text-align:center;
-
-opacity:.7;
-
-font-size:14px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;background:#111;color:#f5f5f5;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('https://www.buzz-factory.net/tokyo/img/top1.jpg') center center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;}
+.hero-inner{max-width:1000px;}
+.hero-sub{letter-spacing:.28em;font-size:15px;margin-bottom:40px;opacity:.82;}
+.hero h1{font-size:82px;line-height:1.02;font-weight:300;letter-spacing:.03em;margin-bottom:40px;}
+.hero-copy{font-size:28px;letter-spacing:.08em;margin-bottom:30px;}
+.hero-ja{font-size:22px;opacity:.88;margin-bottom:45px;}
+.btns{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.btn{padding:15px 34px;border:1px solid #ddd;font-size:14px;letter-spacing:.15em;transition:.3s;}
+.btn:hover{background:#fff;color:#111;}
+.section{padding:110px 8%;}
+.section-title{font-size:46px;text-align:center;margin-bottom:20px;font-weight:300;letter-spacing:.08em;}
+.lead{text-align:center;max-width:900px;margin:0 auto 70px;opacity:.82;}
+.lineup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;}
+.card{background:#1a1a1a;border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45);}
+.card img{width:100%;height:260px;object-fit:contain;background:#ece8df;padding:18px;display:block;}
+.card-body{padding:28px;}
+.card-head{padding:16px;text-align:center;letter-spacing:.18em;font-size:13px;background:#232323;}
+.card-body h3{font-size:34px;margin-bottom:18px;font-weight:300;}
+.price{margin-top:20px;font-size:32px;color:#d4b98d;}
+.options{background:#181818;}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+.option-card{background:#202020;border-radius:12px;overflow:hidden;}
+.option-card img{width:100%;height:220px;object-fit:cover;}
+.option-card div{padding:20px;}
+.option-card h4{font-size:24px;margin-bottom:12px;font-weight:400;}
+footer{padding:80px 20px;text-align:center;opacity:.7;font-size:14px;border-top:1px solid rgba(255,255,255,.08);}
 @media(max-width:768px){
-
-.hero h1{
-
-font-size:52px;
-
+.hero h1{font-size:52px;}
+.hero-copy{font-size:22px;}
+.hero-ja{font-size:18px;}
+.section-title{font-size:34px;}
 }
-
-.hero-copy{
-
-font-size:22px;
-
-}
-
-.hero-ja{
-
-font-size:18px;
-
-}
-
-.section-title{
-
-font-size:34px;
-
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <section class="hero">
-
 <div class="hero-inner">
-
-<div class="hero-sub">
-
-The Spirit of Shelby Cobra.
-
-</div>
+<div class="hero-sub">The Spirit of Shelby Cobra.</div>
 
 <h1>
-
 HERITAGE<br>
-
 MODERN PERFORMANCE<br>
-
 HALO
-
 </h1>
 
-<div class="hero-copy">
-
-Three ways to continue a legend.
-
-</div>
+<div class="hero-copy">Three ways to continue a legend.</div>
 
 <div class="hero-ja">
-
 伝統、性能、そして憧れ。<br>
-
 それぞれの形で受け継ぐ Cobra。
-
 </div>
 
 <div class="btns">
-
-<a href="#lineup" class="btn">
-
-ラインナップを見る
-
-</a>
-
-<a href="#options" class="btn">
-
-オプションを見る
-
-</a>
-
+<a href="#lineup" class="btn">ラインナップを見る</a>
+<a href="#options" class="btn">オプションを見る</a>
 </div>
-
 </div>
-
 </section>
 
 <section id="lineup" class="section">
-
-<h2 class="section-title">
-
-3つのラインで選ぶ、Superformance MKIII。
-
-</h2>
+<h2 class="section-title">3つのラインで選ぶ、Superformance MKIII。</h2>
 
 <p class="lead">
-
-Shelby Cobraの精神を、
-
-HERITAGE / MODERN PERFORMANCE / HALO
-
-の3つの思想で受け継ぎます。
-
-車両価格は表示、
-
-オプション価格は商談時にご案内します。
-
+Shelby Cobraの精神を、HERITAGE / MODERN PERFORMANCE / HALO の3つの思想で受け継ぎます。<br>
+車両価格は表示、オプション価格は商談時にご案内します。
 </p>
 
 <div class="lineup-grid">
 
 <div class="card">
-
-<div class="card-head">
-
-HERITAGE
-
-</div>
-
+<div class="card-head">HERITAGE</div>
 <img src="https://www.buzz-factory.net/tokyo/img/engine2.PNG">
-
 <div class="card-body">
-
-<h3>
-
-302 OHV / 427 OHV
-
-</h3>
-
+<h3>302 OHV / 427 OHV</h3>
 <p>
-
 クラシックなFord OHVの魅力を味わうHERITAGEライン。<br>
-
-427は351 Clevelandベースの高排気量ストローカーとして、
-
-Shelby Cobra本来の世界観を重視した仕様です。
-
+427は351 Clevelandベースの高排気量ストローカーとして、Shelby Cobra本来の世界観を重視した仕様です。
 </p>
-
-<div class="price">
-
-¥18,500,000〜
-
+<div class="price">¥18,500,000〜</div>
 </div>
-
-</div>
-
 </div>
 
 <div class="card">
-
-<div class="card-head">
-
-MODERN PERFORMANCE
-
-</div>
-
+<div class="card-head">MODERN PERFORMANCE</div>
 <img src="https://www.buzz-factory.net/tokyo/img/engine3.PNG">
-
 <div class="card-body">
-
-<h3>
-
-302 Coyote DOHC
-
-</h3>
-
+<h3>302 Coyote DOHC</h3>
 <p>
-
-5.0L Coyote DOHCを中心とした
-
-MODERN PERFORMANCEライン。<br>
-
-現代的な信頼性、扱いやすさ、
-
-快適性を重視した主力モデルです。
-
+5.0L Coyote DOHCを中心としたMODERN PERFORMANCEライン。<br>
+現代的な信頼性、扱いやすさ、快適性を重視した主力モデルです。
 </p>
-
-<div class="price">
-
-¥19,800,000〜
-
+<div class="price">¥19,800,000〜</div>
 </div>
-
-</div>
-
 </div>
 
 <div class="card">
-
-<div class="card-head">
-
-HALO
-
-</div>
-
+<div class="card-head">HALO</div>
 <img src="https://www.buzz-factory.net/tokyo/img/engine1.PNG">
-
 <div class="card-body">
-
-<h3>
-
-450 Godzilla
-
-</h3>
-
+<h3>450 Godzilla</h3>
 <p>
-
 7.3L OHV “Godzilla” を搭載したHALOライン。<br>
-
-現代OHV最大級のトルクと迫力を味わう、
-
-次世代のHalo Cobraです。
-
+現代OHV最大級のトルクと迫力を味わう、次世代のHalo Cobraです。
 </p>
-
-<div class="price">
-
-¥22,000,000〜
-
+<div class="price">¥22,000,000〜</div>
+</div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
 
 <section id="options" class="section options">
-
-<h2 class="section-title">
-
-Factory Options
-
-</h2>
+<h2 class="section-title">Factory Options</h2>
 
 <p class="lead">
-
-Buzz Gallery Tokyo が提案する
-
-Superformance MKIII オプションラインナップ。
-
+Buzz Gallery Tokyo が提案する Superformance MKIII オプションラインナップ。<br>
 価格は商談時にご案内します。
-
 </p>
 
 <div class="option-grid">
 
 <div class="option-card">
-
 <img src="https://www.buzz-factory.net/tokyo/img/carbon1.jpg">
-
 <div>
-
 <h4>Dry Carbon Hood</h4>
-
-<p>
-
-ドライカーボン製フード。
-
-軽量化と質感を両立。
-
-</p>
-
+<p>ドライカーボン製フード。軽量化と質感を両立。</p>
 </div>
-
 </div>
 
 <div class="option-card">
-
 <img src="https://www.buzz-factory.net/tokyo/img/top.jpg">
-
 <div>
-
 <h4>Le Mans Top</h4>
-
-<p>
-
-歴史的背景を持つ
-
-全天候型ハードトップ。
-
-</p>
-
+<p>歴史的背景を持つ全天候型ハードトップ。</p>
 </div>
-
 </div>
 
 <div class="option-card">
-
 <img src="https://www.buzz-factory.net/tokyo/img/suspension.jpg">
-
 <div>
-
 <h4>Aragosta Suspension</h4>
-
-<p>
-
-20段減衰調整式。
-
-快適性と走行性能を両立。
-
-</p>
-
+<p>20段減衰調整式。快適性と走行性能を両立。</p>
 </div>
-
 </div>
 
 <div class="option-card">
-
 <img src="https://www.buzz-factory.net/tokyo/img/ac.jpg">
-
 <div>
-
 <h4>Electric A/C System</h4>
-
-<p>
-
-電子制御電動コンプレッサー式
-
-エアコンシステム。
-
-</p>
-
+<p>電子制御電動コンプレッサー式エアコンシステム。</p>
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 <section class="section">
-
-<h2 class="section-title">
-
-日本専用仕様
-
-</h2>
+<h2 class="section-title">日本専用仕様</h2>
 
 <p class="lead">
-
-Buzz Gallery Tokyoでは、
-
-日本の法規・環境・品質基準に合わせた
-
-独自仕様を展開しています。
-
+日本専用仕様という、Buzzの価値。<br><br>
+フレームやシート部品を強化し、UNECE R14/R17試験を国内で実施。<br>
+日本の最新安全基準をクリアし、電動ファンや各種警告灯など日常使用の信頼性も高めています。
 </p>
-
 </section>
 
 <section class="section options">
-
-<h2 class="section-title">
-
-Warranty & Maintenance
-
-</h2>
-
+<h2 class="section-title">Warranty & Maintenance</h2>
 <p class="lead">
-
-新車保証、
-
-メンテナンス、
-
-アフターサポートまで
-
-一貫して対応します。
-
+新車保証、メンテナンス、アフターサポートまで一貫して対応します。
 </p>
-
 </section>
 
 <section class="section">
-
-<h2 class="section-title">
-
-Photo Gallery
-
-</h2>
-
-<p class="lead">
-
-Superformance MKIII の世界観。
-
-</p>
-
+<h2 class="section-title">Photo Gallery</h2>
+<p class="lead">Superformance MKIII の世界観。</p>
 </section>
 
 <section class="section options">
-
-<h2 class="section-title">
-
-Finance Plan
-
-</h2>
-
-<p class="lead">
-
-オートローン、
-
-残価設定、
-
-法人プラン等に対応。
-
-</p>
-
+<h2 class="section-title">Finance Plan</h2>
+<p class="lead">オートローン、残価設定、法人プラン等に対応。</p>
 </section>
 
 <section class="section">
-
-<h2 class="section-title">
-
-Buy Back & Sales Support
-
-</h2>
-
-<p class="lead">
-
-買取保証、
-
-販売サポート、
-
-資産価値維持にも対応。
-
-</p>
-
+<h2 class="section-title">Buy Back & Sales Support</h2>
+<p class="lead">買取保証、販売サポート、資産価値維持にも対応。</p>
 </section>
 
 <section class="section options">
-
-<h2 class="section-title">
-
-Parts Sales
-
-</h2>
-
-<p class="lead">
-
-Superformance用
-
-各種パーツ販売にも対応。
-
-</p>
-
+<h2 class="section-title">Parts Sales</h2>
+<p class="lead">Superformance用各種パーツ販売にも対応。</p>
 </section>
 
 <section class="section">
-
-<h2 class="section-title">
-
-Q & A
-
-</h2>
-
-<p class="lead">
-
-よくあるご質問をまとめています。
-
-</p>
-
+<h2 class="section-title">Q & A</h2>
+<p class="lead">よくあるご質問をまとめています。</p>
 </section>
 
 <section class="section options">
-
-<h2 class="section-title">
-
-Showroom Reservation
-
-</h2>
-
-<p class="lead">
-
-ショールーム予約受付中。
-
-</p>
-
+<h2 class="section-title">Showroom Reservation</h2>
+<p class="lead">ショールーム予約受付中。</p>
 </section>
 
 <section class="section">
-
-<h2 class="section-title">
-
-Certified Used Cars
-
-</h2>
-
-<p class="lead">
-
-認定中古車情報。
-
-</p>
-
+<h2 class="section-title">Certified Used Cars</h2>
+<p class="lead">認定中古車情報。</p>
 </section>
 
 <section class="section options">
-
-<h2 class="section-title">
-
-Company & Access
-
-</h2>
-
+<h2 class="section-title">Company & Access</h2>
 <p class="lead">
-
 BUZZ GALLERY TOKYO<br>
-
 SUPERFORMANCE MKIII JAPAN
-
 </p>
-
 </section>
 
 <footer>
-
 BUZZ GALLERY TOKYO / SUPERFORMANCE JAPAN
-
 </footer>
 
 </body>
-
 </html>
